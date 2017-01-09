@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6A1EFD81C6963B2E59F286CF574650D58D832A03",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D8589AFECACD58718A4092F18687F4977574CC89" : 0,
+    "6A1EFD81C6963B2E59F286CF574650D58D832A03" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "56803E23-40F2-4234-B141-CE352C737D6F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D8589AFECACD58718A4092F18687F4977574CC89" : "..",
+    "6A1EFD81C6963B2E59F286CF574650D58D832A03" : "VideoStory\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "VideoStory",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "VideoStory.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lanecatm\/VideoStory.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6A1EFD81C6963B2E59F286CF574650D58D832A03"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lanecatm\/code.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D8589AFECACD58718A4092F18687F4977574CC89"
+    }
+  ]
+}
