@@ -8,6 +8,7 @@
 
 #include <string>
 #include "FlowCompare.hpp"
+#include "ColorSimilarityComparer.hpp"
 using namespace std;
 using namespace cv;
 
@@ -15,6 +16,7 @@ int main(){
     
     FlowCompare flowComp = FlowCompare();
     
+    //读入图片
     string img1Path = "/Users/xfhuang/code/Resources/opencv/11.png";
     string img2Path = "/Users/xfhuang/code/Resources/opencv/12.png";
     
@@ -58,6 +60,10 @@ int main(){
     cvWaitKey(0);
     
     //计算图片颜色分布直方图的相似度
+    ColorSimilarityComparer colorComparer = ColorSimilarityComparer();
+    cout << "same image:" << colorComparer.compareTwoImage(img1, img1)<< endl;
+    cout << "different image:" << colorComparer.compareTwoImage(img1, img2)<<endl;
+    
     
     
     //计算画面平均光流的值
