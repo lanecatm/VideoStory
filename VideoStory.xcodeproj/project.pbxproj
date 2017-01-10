@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A0B016A1E2325580093A57A /* FlowCompare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A0B01681E2325580093A57A /* FlowCompare.cpp */; };
-		3A37F8AD1E001F6300BEEA6E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A37F8AC1E001F6300BEEA6E /* main.cpp */; };
+		3A1A33381E24B65400C1D49A /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33321E24B65400C1D49A /* color.cpp */; };
+		3A1A33391E24B65400C1D49A /* FlowCompare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33341E24B65400C1D49A /* FlowCompare.cpp */; };
+		3A1A333A1E24B65400C1D49A /* FlowCompareUnitTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33361E24B65400C1D49A /* FlowCompareUnitTest.cpp */; };
+		3A1A333B1E24B65400C1D49A /* main_old.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33371E24B65400C1D49A /* main_old.cpp */; };
+		3A1A333D1E24B68300C1D49A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A333C1E24B68300C1D49A /* main.cpp */; };
 		3A37F9F31E00DEB100BEEA6E /* libopencv_calib3d.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9BE1E00DEB100BEEA6E /* libopencv_calib3d.2.4.9.dylib */; };
 		3A37F9F41E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9BF1E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib */; };
 		3A37F9F51E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9C01E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib */; };
@@ -62,8 +65,6 @@
 		3A37FA251E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9F01E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib */; };
 		3A37FA261E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9F11E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib */; };
 		3A37FA271E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9F21E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib */; };
-		3AB42E1F1E0CF7BB00CDD086 /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB42E1D1E0CF7BB00CDD086 /* color.cpp */; };
-		3AF5BA601E236DB8007CA2B9 /* FlowCompareUnitTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AF5BA5F1E236DB8007CA2B9 /* FlowCompareUnitTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,10 +80,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A0B01681E2325580093A57A /* FlowCompare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlowCompare.cpp; sourceTree = "<group>"; };
-		3A0B01691E2325580093A57A /* FlowCompare.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FlowCompare.hpp; sourceTree = "<group>"; };
+		3A1A33321E24B65400C1D49A /* color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = color.cpp; path = VideoStory/color.cpp; sourceTree = SOURCE_ROOT; };
+		3A1A33331E24B65400C1D49A /* color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = color.hpp; path = VideoStory/color.hpp; sourceTree = SOURCE_ROOT; };
+		3A1A33341E24B65400C1D49A /* FlowCompare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlowCompare.cpp; path = VideoStory/FlowCompare.cpp; sourceTree = SOURCE_ROOT; };
+		3A1A33351E24B65400C1D49A /* FlowCompare.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FlowCompare.hpp; path = VideoStory/FlowCompare.hpp; sourceTree = SOURCE_ROOT; };
+		3A1A33361E24B65400C1D49A /* FlowCompareUnitTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlowCompareUnitTest.cpp; path = VideoStory/FlowCompareUnitTest.cpp; sourceTree = SOURCE_ROOT; };
+		3A1A33371E24B65400C1D49A /* main_old.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main_old.cpp; path = VideoStory/main_old.cpp; sourceTree = SOURCE_ROOT; };
+		3A1A333C1E24B68300C1D49A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = VideoStory/main.cpp; sourceTree = SOURCE_ROOT; };
 		3A37F8A91E001F6300BEEA6E /* VideoStory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VideoStory; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A37F8AC1E001F6300BEEA6E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3A37F9BE1E00DEB100BEEA6E /* libopencv_calib3d.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_calib3d.2.4.9.dylib; sourceTree = "<group>"; };
 		3A37F9BF1E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_contrib.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_contrib.2.4.9.dylib; sourceTree = "<group>"; };
 		3A37F9C01E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_contrib.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_contrib.2.4.9.dylib; sourceTree = "<group>"; };
@@ -136,9 +141,6 @@
 		3A37F9F01E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_videostab.2.4.9.dylib; sourceTree = "<group>"; };
 		3A37F9F11E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_videostab.2.4.9.dylib; sourceTree = "<group>"; };
 		3A37F9F21E00DEB100BEEA6E /* libopencv_videostab.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_videostab.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_videostab.2.4.9.dylib; sourceTree = "<group>"; };
-		3AB42E1D1E0CF7BB00CDD086 /* color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = color.cpp; sourceTree = "<group>"; };
-		3AB42E1E1E0CF7BB00CDD086 /* color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = color.hpp; sourceTree = "<group>"; };
-		3AF5BA5F1E236DB8007CA2B9 /* FlowCompareUnitTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlowCompareUnitTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,12 +279,13 @@
 		3A37F8AB1E001F6300BEEA6E /* VideoStory */ = {
 			isa = PBXGroup;
 			children = (
-				3AF5BA5F1E236DB8007CA2B9 /* FlowCompareUnitTest.cpp */,
-				3A37F8AC1E001F6300BEEA6E /* main.cpp */,
-				3AB42E1D1E0CF7BB00CDD086 /* color.cpp */,
-				3AB42E1E1E0CF7BB00CDD086 /* color.hpp */,
-				3A0B01681E2325580093A57A /* FlowCompare.cpp */,
-				3A0B01691E2325580093A57A /* FlowCompare.hpp */,
+				3A1A33321E24B65400C1D49A /* color.cpp */,
+				3A1A33331E24B65400C1D49A /* color.hpp */,
+				3A1A33341E24B65400C1D49A /* FlowCompare.cpp */,
+				3A1A33351E24B65400C1D49A /* FlowCompare.hpp */,
+				3A1A33361E24B65400C1D49A /* FlowCompareUnitTest.cpp */,
+				3A1A33371E24B65400C1D49A /* main_old.cpp */,
+				3A1A333C1E24B68300C1D49A /* main.cpp */,
 			);
 			name = VideoStory;
 			path = OpencvTest;
@@ -347,10 +350,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A37F8AD1E001F6300BEEA6E /* main.cpp in Sources */,
-				3AB42E1F1E0CF7BB00CDD086 /* color.cpp in Sources */,
-				3A0B016A1E2325580093A57A /* FlowCompare.cpp in Sources */,
-				3AF5BA601E236DB8007CA2B9 /* FlowCompareUnitTest.cpp in Sources */,
+				3A1A33381E24B65400C1D49A /* color.cpp in Sources */,
+				3A1A333A1E24B65400C1D49A /* FlowCompareUnitTest.cpp in Sources */,
+				3A1A333B1E24B65400C1D49A /* main_old.cpp in Sources */,
+				3A1A333D1E24B68300C1D49A /* main.cpp in Sources */,
+				3A1A33391E24B65400C1D49A /* FlowCompare.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

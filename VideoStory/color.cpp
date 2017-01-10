@@ -13,7 +13,7 @@ using namespace std;
 
 
 
-int main( int argc, char** argv )
+int mainx()
 {
     IplImage * src= cvLoadImage("/Users/xfhuang/code/Resources/opencv/m3.png");
     
@@ -84,5 +84,6 @@ int main( int argc, char** argv )
     cvNamedWindow( "H-S Histogram", 1 );
     cvShowImage( "H-S Histogram", hist_img );
     
-    cvWaitKey(0);  
+    cvWaitKey(0);
+    return 0;
 }

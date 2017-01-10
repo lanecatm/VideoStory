@@ -27,17 +27,19 @@ class FlowCompare{
 public:
     FlowCompare();
     
-    int estimateCameraMoving(cv::Mat img1, cv::Mat img2);
+    void estimateCameraMoving(const cv::Mat &img1, const cv::Mat &img2, cv::Mat &changedImg1);
     
-    int compareOpticalFlow(cv::Mat img1, cv::Mat img2);
+    void compareOpticalFlow(const cv::Mat &img1, const cv::Mat &img2, cv::Mat &flow);
     
-    int showResult(cv::Mat flow, cv::Mat &color);
+    void showResult(const cv::Mat &flow, cv::Mat &color);
     
     
 private:
+    //计算显示光流的色轮
     void makeColorWheel(std::vector<cv::Scalar> &colorwheel);
+    
     //计算原始图像点位在经过矩阵变换后在目标图像上对应位置
-    cv::Point2f getTransformPoint(const cv::Point2f originalPoint,const cv::Mat &transformMaxtri);
+    cv::Point2f getTransformPoint(const cv::Point2f &originalPoint,const cv::Mat &transformMaxtri);
 
     
 };

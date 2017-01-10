@@ -4,22 +4,57 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "227FB7C9A5A5CAA179570905F2F3CD784962632C" : 0,
+    "6A1EFD81C6963B2E59F286CF574650D58D832A03" : 0,
     "D8589AFECACD58718A4092F18687F4977574CC89" : 0,
-    "6A1EFD81C6963B2E59F286CF574650D58D832A03" : 0
+    "76A15575C5B740800EF8E92EA66B97A276AEF659" : 0,
+    "3937AD029EC249E65518317051B5B5523DA0B51B" : 0,
+    "9E7D65EFB7389E119F3FD151D5E48853CD39C470" : 0,
+    "4D8356AD2C6C68B562AEB940BB91BFFF2F477B9C" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "56803E23-40F2-4234-B141-CE352C737D6F",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "227FB7C9A5A5CAA179570905F2F3CD784962632C" : "..\/homework\/AlgoTrading",
+    "6A1EFD81C6963B2E59F286CF574650D58D832A03" : "VideoStory\/",
     "D8589AFECACD58718A4092F18687F4977574CC89" : "..",
-    "6A1EFD81C6963B2E59F286CF574650D58D832A03" : "VideoStory\/"
+    "76A15575C5B740800EF8E92EA66B97A276AEF659" : "..\/Packages\/googletest",
+    "3937AD029EC249E65518317051B5B5523DA0B51B" : "..\/edison\/facepp-python-sdk",
+    "9E7D65EFB7389E119F3FD151D5E48853CD39C470" : "repetitionExtract\/",
+    "4D8356AD2C6C68B562AEB940BB91BFFF2F477B9C" : "BidirectionalSimilarity\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "VideoStory",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "VideoStory.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lanecatm\/AlgoTrading.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "227FB7C9A5A5CAA179570905F2F3CD784962632C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/FacePlusPlus\/facepp-python-sdk.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3937AD029EC249E65518317051B5B5523DA0B51B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/flashlau\/BidirectionalSimilarity.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4D8356AD2C6C68B562AEB940BB91BFFF2F477B9C"
+    },
+    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lanecatm\/VideoStory.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6A1EFD81C6963B2E59F286CF574650D58D832A03"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/google\/googletest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "76A15575C5B740800EF8E92EA66B97A276AEF659"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Rosaniline\/repetitionExtract.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9E7D65EFB7389E119F3FD151D5E48853CD39C470"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lanecatm\/code.git",

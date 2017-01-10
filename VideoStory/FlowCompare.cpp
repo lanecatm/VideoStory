@@ -16,7 +16,7 @@ FlowCompare::FlowCompare()
 }
 
 
-int FlowCompare::estimateCameraMoving(Mat img1, Mat img2)
+void FlowCompare::estimateCameraMoving(const Mat &img1, const Mat &img2, Mat &changedImg1)
 {
     
     SurfFeatureDetector detector(400);
@@ -49,19 +49,16 @@ int FlowCompare::estimateCameraMoving(Mat img1, Mat img2)
     Mat adjustHomo=adjustMat*homo;
     
     //图像配准
-    Mat imageTransform1;
-    warpPerspective(img1,imageTransform1,homo, img1.size());
-    
-    return 0;
+    warpPerspective(img1, changedImg1, homo, img1.size());
+
 }
 
-int FlowCompare::compareOpticalFlow(Mat img1, Mat img2)
+void FlowCompare::compareOpticalFlow(const Mat &img1, const Mat &img2, Mat &flow)
 {
-    Mat gray1, gray2, flow;
+    Mat gray1, gray2;
     cvtColor(img1, gray1, CV_BGR2GRAY);
     cvtColor(img2, gray2, CV_BGR2GRAY);
     calcOpticalFlowFarneback(gray1, gray2, flow, 0.5, 3, 15, 3, 5, 1.2, 0);
-    return 0;
 }
 
 void FlowCompare::makeColorWheel(vector<Scalar> &colorwheel)
@@ -84,7 +81,7 @@ void FlowCompare::makeColorWheel(vector<Scalar> &colorwheel)
     
 }
 
-int FlowCompare::showResult(const Mat flow, Mat &color)
+void FlowCompare::showResult(const Mat &flow, Mat &color)
 {
     if (color.empty())
         color.create(flow.rows, flow.cols, CV_8UC3);
@@ -146,14 +143,13 @@ int FlowCompare::showResult(const Mat flow, Mat &color)
             }
         }
     }
-    return 0;
 }
 
 
 
 
 //计算原始图像点位在经过矩阵变换后在目标图像上对应位置
-Point2f FlowCompare::getTransformPoint(const Point2f originalPoint,const Mat &transformMaxtri)
+Point2f FlowCompare::getTransformPoint(const Point2f &originalPoint,const Mat &transformMaxtri)
 {
     Mat originelP,targetP;
     originelP=(Mat_<double>(3,1)<<originalPoint.x,originalPoint.y,1.0);
