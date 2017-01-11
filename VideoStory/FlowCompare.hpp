@@ -39,9 +39,6 @@ public:
     //仅计算光流的强度
     double averageFlowStrength(const std::vector<cv::Mat> flow);
     
-    //计算光流的向量
-    void averageFlow
-    
     
 private:
     //计算显示光流的色轮

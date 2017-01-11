@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A1A33381E24B65400C1D49A /* color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33321E24B65400C1D49A /* color.cpp */; };
+		3A0482DD1E261C1F004E3428 /* FrameGetter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A0482DB1E261C1F004E3428 /* FrameGetter.cpp */; };
 		3A1A33391E24B65400C1D49A /* FlowCompare.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33341E24B65400C1D49A /* FlowCompare.cpp */; };
-		3A1A333A1E24B65400C1D49A /* FlowCompareUnitTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33361E24B65400C1D49A /* FlowCompareUnitTest.cpp */; };
-		3A1A333B1E24B65400C1D49A /* main_old.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A33371E24B65400C1D49A /* main_old.cpp */; };
 		3A1A333D1E24B68300C1D49A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A1A333C1E24B68300C1D49A /* main.cpp */; };
 		3A37F9F31E00DEB100BEEA6E /* libopencv_calib3d.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9BE1E00DEB100BEEA6E /* libopencv_calib3d.2.4.9.dylib */; };
 		3A37F9F41E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A37F9BF1E00DEB100BEEA6E /* libopencv_contrib.2.4.9.dylib */; };
@@ -81,12 +79,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A1A33321E24B65400C1D49A /* color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = color.cpp; path = VideoStory/color.cpp; sourceTree = SOURCE_ROOT; };
-		3A1A33331E24B65400C1D49A /* color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = color.hpp; path = VideoStory/color.hpp; sourceTree = SOURCE_ROOT; };
+		3A0482DB1E261C1F004E3428 /* FrameGetter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FrameGetter.cpp; path = VideoStory/FrameGetter.cpp; sourceTree = SOURCE_ROOT; };
+		3A0482DC1E261C1F004E3428 /* FrameGetter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FrameGetter.hpp; path = VideoStory/FrameGetter.hpp; sourceTree = SOURCE_ROOT; };
 		3A1A33341E24B65400C1D49A /* FlowCompare.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlowCompare.cpp; path = VideoStory/FlowCompare.cpp; sourceTree = SOURCE_ROOT; };
 		3A1A33351E24B65400C1D49A /* FlowCompare.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FlowCompare.hpp; path = VideoStory/FlowCompare.hpp; sourceTree = SOURCE_ROOT; };
-		3A1A33361E24B65400C1D49A /* FlowCompareUnitTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FlowCompareUnitTest.cpp; path = VideoStory/FlowCompareUnitTest.cpp; sourceTree = SOURCE_ROOT; };
-		3A1A33371E24B65400C1D49A /* main_old.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main_old.cpp; path = VideoStory/main_old.cpp; sourceTree = SOURCE_ROOT; };
 		3A1A333C1E24B68300C1D49A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = VideoStory/main.cpp; sourceTree = SOURCE_ROOT; };
 		3A37F8A91E001F6300BEEA6E /* VideoStory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VideoStory; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A37F9BE1E00DEB100BEEA6E /* libopencv_calib3d.2.4.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.2.4.9.dylib; path = ../../../../../usr/local/lib/libopencv_calib3d.2.4.9.dylib; sourceTree = "<group>"; };
@@ -282,15 +278,13 @@
 		3A37F8AB1E001F6300BEEA6E /* VideoStory */ = {
 			isa = PBXGroup;
 			children = (
-				3A1A33321E24B65400C1D49A /* color.cpp */,
-				3A1A33331E24B65400C1D49A /* color.hpp */,
 				3A1A33341E24B65400C1D49A /* FlowCompare.cpp */,
 				3A1A33351E24B65400C1D49A /* FlowCompare.hpp */,
-				3A1A33361E24B65400C1D49A /* FlowCompareUnitTest.cpp */,
-				3A1A33371E24B65400C1D49A /* main_old.cpp */,
 				3A1A333C1E24B68300C1D49A /* main.cpp */,
 				3A96EA011E25258F007C1636 /* ColorSimilarityComparer.cpp */,
 				3A96EA021E25258F007C1636 /* ColorSimilarityComparer.hpp */,
+				3A0482DB1E261C1F004E3428 /* FrameGetter.cpp */,
+				3A0482DC1E261C1F004E3428 /* FrameGetter.hpp */,
 			);
 			name = VideoStory;
 			path = OpencvTest;
@@ -355,11 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1A33381E24B65400C1D49A /* color.cpp in Sources */,
 				3A96EA031E25258F007C1636 /* ColorSimilarityComparer.cpp in Sources */,
-				3A1A333A1E24B65400C1D49A /* FlowCompareUnitTest.cpp in Sources */,
-				3A1A333B1E24B65400C1D49A /* main_old.cpp in Sources */,
 				3A1A333D1E24B68300C1D49A /* main.cpp in Sources */,
+				3A0482DD1E261C1F004E3428 /* FrameGetter.cpp in Sources */,
 				3A1A33391E24B65400C1D49A /* FlowCompare.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
