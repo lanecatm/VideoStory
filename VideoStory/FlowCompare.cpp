@@ -81,6 +81,31 @@ void FlowCompare::makeColorWheel(vector<Scalar> &colorwheel)
     
 }
 
+
+double FlowCompare::averageFlowStrength(const vector<Mat> flowList){
+    vector<Mat>::const_iterator iter;
+    double strengthSum = 0;
+    for(iter = flowList.begin(); iter < flowList.end(); iter++){
+        for (int i= 0; i < (*iter).rows; ++i)
+        {
+            for (int j = 0; j < (*iter).cols; ++j)
+            {
+                Vec2f flow_at_point = (*iter).at<Vec2f>(i, j);
+                float fx = flow_at_point[0];
+                float fy = flow_at_point[1];
+                double strength = sqrt(fx*fx + fy*fy);
+                strengthSum += strength;
+            }
+        }
+    }
+    if (flowList.size()!=0){
+        return strengthSum / flowList.size();
+    }
+    else{
+        return 0;
+    }
+}
+
 void FlowCompare::showResult(const Mat &flow, Mat &color)
 {
     if (color.empty())

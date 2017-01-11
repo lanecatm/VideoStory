@@ -10,7 +10,8 @@
 using namespace std;
 using namespace cv;
 
-
+//0最相似
+//1最不相似
 double ColorSimilarityComparer::compareTwoImage(const Mat &image1, const Mat &image2, int compareMethod)
 {
     Mat hsvImage1, hsvImage2;
@@ -43,7 +44,33 @@ double ColorSimilarityComparer::compareTwoImage(const Mat &image1, const Mat &im
 
 double ColorSimilarityComparer::compareImages(const vector<Mat> imageList1, const vector<Mat> imageList2, int compareMethod)
 {
+    vector<Mat>::const_iterator iter1;
+    vector<Mat>::const_iterator iter2;
+    double sumDifference1 = 0, sumDifference2 = 0;
+    for (iter1 = imageList1.begin(); iter1 != imageList1.end(); iter1++){
+        double minValue = 1;
+        for (iter2 = imageList2.begin(); iter2 != imageList2.end(); iter2++){
+            double compareValue = compareTwoImage(*iter1, *iter2);
+            minValue = minValue > compareValue ? compareValue : minValue;
+        }
+        sumDifference1 = sumDifference1 + minValue;
+    }
     
-    return 0;
+    for (iter2 = imageList2.begin(); iter2 != imageList2.end(); iter2++){
+        double minValue = 1;
+        for (iter1 = imageList1.begin(); iter1 != imageList1.end(); iter1++){
+            double compareValue = compareTwoImage(*iter1, *iter2);
+            minValue = minValue > compareValue ? compareValue : minValue;
+        }
+        sumDifference2 = sumDifference2 + minValue;
+    }
+    double averageDifference = 0;
+    if (imageList1.size()!=0){
+        averageDifference = sumDifference1 / imageList1.size() + averageDifference;
+    }
+    if (imageList2.size()!=0){
+        averageDifference = sumDifference2 / imageList2.size() + averageDifference;
+    }
+    return averageDifference;
     
 }

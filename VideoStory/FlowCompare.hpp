@@ -27,11 +27,20 @@ class FlowCompare{
 public:
     FlowCompare();
     
+    //消除相机移动
     void estimateCameraMoving(const cv::Mat &img1, const cv::Mat &img2, cv::Mat &changedImg1);
     
+    //比较光流
     void compareOpticalFlow(const cv::Mat &img1, const cv::Mat &img2, cv::Mat &flow);
     
+    //展现单幅光流示意图
     void showResult(const cv::Mat &flow, cv::Mat &color);
+    
+    //仅计算光流的强度
+    double averageFlowStrength(const std::vector<cv::Mat> flow);
+    
+    //计算光流的向量
+    void averageFlow
     
     
 private:
