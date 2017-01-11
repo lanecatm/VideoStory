@@ -9,28 +9,32 @@
 #include <string>
 #include "FlowCompare.hpp"
 #include "ColorSimilarityComparer.hpp"
+#include "FrameGetter.hpp"
 using namespace std;
 using namespace cv;
 
 int main(){
     
     FlowCompare flowComp = FlowCompare();
+    FrameGetter frameGetter = FrameGetter();
     
     //读入图片
     string img1Path = "/Users/xfhuang/code/Resources/opencv/11.png";
     string img2Path = "/Users/xfhuang/code/Resources/opencv/12.png";
     
-    Mat img1 = imread(img1Path);
+    //读入视频
+    string videoPath1 = "/Users/xfhuang/code/Resources/opencv/v1.m4v";
+    vector<Mat> video1List = frameGetter.getFrameListFromVideo(videoPath1);
+    
+    Mat img1 = frameGetter.getFrameFromImage(img1Path);
     if(!img1.data)
     {
-        cerr << "No file " << img1Path << endl;
         return -1;
     }
     
-    Mat img2 = imread(img2Path);
+    Mat img2 = frameGetter.getFrameFromImage(img2Path);
     if(!img2.data)
     {
-        cerr << "No file " << img2Path << endl;
         return -1;
     }
     
