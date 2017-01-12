@@ -24,7 +24,7 @@
 
 class FrameGetter{
 public:
-    std::vector<cv::Mat> getFrameListFromVideo(std::string filename);
+    std::vector<cv::Mat> getFrameListFromVideo(std::string filename, int intervalNum = 1);
     cv::Mat getFrameFromImage(std::string filename);
     std::vector<cv::Mat> getKeyFrameListFromVideo(std::string filename);
     std::vector<cv::Mat> getKeyFrameList(std::vector<cv::Mat> frameList);

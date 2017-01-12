@@ -80,6 +80,34 @@ void FlowCompare::makeColorWheel(vector<Scalar> &colorwheel)
     for (i = 0; i < MR; i++) colorwheel.push_back(Scalar(255,       0,        255-255*i/MR));
     
 }
+double FlowCompare::averageFlowStrengthFromImageList(const vector<Mat> imageList)
+{
+    vector<Mat>::const_iterator iter = imageList.begin();
+    vector<Mat> flowList;
+    //namedWindow("image1");
+    //namedWindow("image2");
+    //namedWindow("imagenew");
+    while(iter < imageList.end()){
+        const Mat &image1 = *iter;
+        ++iter;
+        if (iter >= imageList.end()){
+            break;
+        }
+        const Mat &image2 = *iter;
+        //imshow("image1", image1);
+        //imshow("image2", image2);
+
+        ++iter;
+        Mat flow;
+        Mat newImage1;
+        estimateCameraMoving(image1, image2, newImage1);
+        compareOpticalFlow(newImage1, image2, flow);
+        //imshow("imagenew", newImage1);
+        //waitKey(0);
+        flowList.push_back(flow);
+    }
+    return averageFlowStrength(flowList);
+}
 
 
 double FlowCompare::averageFlowStrength(const vector<Mat> flowList){
@@ -97,6 +125,7 @@ double FlowCompare::averageFlowStrength(const vector<Mat> flowList){
                 strengthSum += strength;
             }
         }
+        strengthSum = strengthSum / ((*iter).rows * (*iter).cols);
     }
     if (flowList.size()!=0){
         return strengthSum / flowList.size();

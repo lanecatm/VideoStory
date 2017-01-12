@@ -10,8 +10,8 @@
 #define FlowCompare_hpp
 
 #include <iostream>
-#include "opencv2/opencv.hpp"
 #include <stdio.h>
+#include "opencv2/opencv.hpp"
 #include "opencv2/core/core.hpp"
 #include "opencv2/features2d/features2d.hpp"
 #include "opencv2/highgui/highgui.hpp"
@@ -38,6 +38,8 @@ public:
     
     //仅计算光流的强度
     double averageFlowStrength(const std::vector<cv::Mat> flow);
+    
+    double averageFlowStrengthFromImageList(const std::vector<cv::Mat> imageList);
     
     
 private:

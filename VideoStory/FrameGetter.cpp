@@ -10,7 +10,7 @@
 using namespace std;
 using namespace cv;
 
-vector<Mat> FrameGetter::getFrameListFromVideo(string filename)
+vector<Mat> FrameGetter::getFrameListFromVideo(string filename, int intervalNum)
 {
     vector<Mat> frameList;
     //要读取的视频文件
@@ -19,12 +19,15 @@ vector<Mat> FrameGetter::getFrameListFromVideo(string filename)
         cerr << "No file " << filename << endl;
         return frameList;
     }
-    
+    int index = 0;
     while (1) {
         Mat frame;
         if (!capture.read(frame))
             break;
-        frameList.push_back(frame);
+        if (index % intervalNum == 0){
+            frameList.push_back(frame);
+        }
+        index = (index % intervalNum) + 1;
     }
     capture.release();
     cout << "get " << frameList.size() << " frames from " << filename << endl;
