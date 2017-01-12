@@ -14,6 +14,83 @@
 using namespace std;
 using namespace cv;
 
+
+
+
+vector<vector<Tuple>> doKmeansOneTime(vector<vector<Mat>> &allVideoList, ColorSimilarityComparer &colorComparer, vector<Tuple> &inputTuples, double maxDifference = 0.4){
+    vector<vector<Tuple>> returnClusters;
+    //如果只有一个视频片段，return
+    if (inputTuples.size() < 2){
+        returnClusters.push_back(inputTuples);
+        return returnClusters;
+    }
+    
+    //把所有的视频素材转换为这次要处理的视频素材
+    //index = label - 1
+    vector<vector<Mat>> videoList;
+    vector<Tuple>::iterator inputTuplesItor;
+    for (inputTuplesItor = inputTuples.begin(); inputTuplesItor < inputTuples.end(); ++inputTuplesItor){
+        videoList.push_back(allVideoList[(*inputTuplesItor)[0] - 1]);
+    }
+    
+    int startIndex = 0;
+    vector<Mat> startVideoImage = videoList[startIndex];
+    
+    //进行颜色分布直方图对比
+    vector<double> differenceList;
+    int maxIndex = startIndex;
+    double maxValue = 0;
+    int index = 0;
+    vector<vector<Mat>>::const_iterator videoListIter;
+    for(videoListIter = videoList.begin(); videoListIter < videoList.end(); ++videoListIter){
+        double difference = colorComparer.compareImages(startVideoImage, *videoListIter);
+        cout << "difference :" <<difference<< endl;
+        differenceList.push_back(difference);
+        if (difference > maxValue){
+            maxIndex = index;
+            maxValue = difference;
+        }
+        ++index;
+    }
+
+    
+    //修改input tuple的color信息
+    int inputIndex;
+    for(inputIndex=0; inputIndex<videoList.size(); ++inputIndex)
+    {
+        inputTuples[inputIndex][2] = differenceList[inputIndex];
+    }
+    
+    cout << "maxValue " << maxValue << endl;
+    //如果最大最小距离小于一个值，停止聚类
+    //maxValue是错的
+    if (maxValue < maxDifference){
+        cout << "return without kmeans" << endl;
+        returnClusters.push_back(inputTuples);
+        return returnClusters;
+    }
+    
+    //确定聚类中心
+    vector<int> indexToSelect;
+    indexToSelect.push_back(startIndex);
+    indexToSelect.push_back(maxIndex);
+    cout << "start index:" << startIndex << endl;
+    cout << "max Index:" << maxIndex << endl;
+    
+    //聚类
+    KMeans kmeans = KMeans();
+    vector<vector<Tuple>> clusters = kmeans.onetimeKMeans(inputTuples, indexToSelect);
+    
+    //递归操作 合并结果
+    vector<vector<Tuple>>::iterator clustersItor;
+    for(clustersItor = clusters.begin(); clustersItor < clusters.end(); ++clustersItor){
+        vector<vector<Tuple>> ansTmpclusters = doKmeansOneTime(allVideoList, colorComparer, *clustersItor);
+        returnClusters.insert(returnClusters.end(), ansTmpclusters.begin(), ansTmpclusters.end());
+    }
+    
+    return returnClusters;
+}
+
 int main(){
     int dimNum = 3;
     
@@ -84,27 +161,6 @@ int main(){
     
     //计算图片颜色分布直方图的相似度
     ColorSimilarityComparer colorComparer = ColorSimilarityComparer();
-    int startIndex = 0;
-    vector<vector<Mat>>::iterator videoListIter;
-    vector<Mat> startVideoImage = videoList[startIndex];
-    vector<double> differenceList;
-    int maxIndex = startIndex;
-    int maxValue = 0;
-    int index = 0;
-    for(videoListIter = videoList.begin(); videoListIter < videoList.end(); ++videoListIter){
-        double difference = colorComparer.compareImages(startVideoImage, *videoListIter);
-        differenceList.push_back(difference);
-        if (difference > maxValue){
-            maxIndex = index;
-            maxValue = difference;
-        }
-        ++index;
-    }
-    vector<int> indexToSelect;
-    indexToSelect.push_back(startIndex);
-    indexToSelect.push_back(maxIndex);
-    cout << "start index:" << startIndex << endl;
-    cout << "max Index:" << maxIndex << endl;
     
     
     //构建输入矩阵
@@ -117,15 +173,14 @@ int main(){
         Tuple tuple(dimNum+1, 0);
         tuple[0] = inputIndex + 1;
         tuple[1] = flowStrengthList[inputIndex];
-        tuple[2] = differenceList[inputIndex];
+        tuple[2] = 0;
         tuple[3] = timeList[inputIndex];
         inputTuples.push_back(tuple);
     }
     
-    KMeans kmeans = KMeans();
-    kmeans.onetimeKMeans(inputTuples, indexToSelect);
-
     
+
+    doKmeansOneTime(videoList, colorComparer, inputTuples);
     
     
     

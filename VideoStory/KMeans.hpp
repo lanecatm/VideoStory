@@ -22,19 +22,18 @@ typedef std::vector<double> Tuple;
 
 class KMeans{
 public:
-    
+
     KMeans(int _dimNum = 3, int _k = 2)
     {
         k = _k;
         dimNum = _dimNum;
     }
     
-    void onetimeKMeans(std::vector<Tuple>& tuples, const std::vector<int> &indexToSelect);
+    std::vector<std::vector<Tuple>> onetimeKMeans(std::vector<Tuple>& tuples, const std::vector<int> &indexToSelect);
     
 private:
-    int k;
     int dimNum;//每条记录的维数
-    
+    int k;
     //计算两个元组间的欧几里距离
     double getDistXY(const Tuple& t1, const Tuple& t2);
     

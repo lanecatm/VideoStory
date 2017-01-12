@@ -10,7 +10,7 @@
 using namespace std;
 
 
-void KMeans::onetimeKMeans(vector<Tuple>& tuples, const vector<int> &indexToSelect){
+vector<vector<Tuple>> KMeans::onetimeKMeans(vector<Tuple>& tuples, const vector<int> &indexToSelect){
     cout<<"in kmeans" << endl;
     //k个簇
     vector<vector<Tuple>> clusters;
@@ -28,15 +28,14 @@ void KMeans::onetimeKMeans(vector<Tuple>& tuples, const vector<int> &indexToSele
     cout << "choose center" << endl;
     int i=0;
     //一开始随机选取k条记录的值作为k个簇的质心（均值）
-    for(i=0;i<k;){
+    for(i=0;i<k;++i){
         int iToSelect = indexToSelect[i];
-        if(means[iToSelect].size() == 0)
+        if(means[i].size() == 0)
         {
             for(int j=0; j<=dimNum; ++j)
             {
                 means[i].push_back(tuples[iToSelect][j]);
             }
-            ++i;
         }
         else{
             cout << "error size" << endl;
@@ -77,6 +76,7 @@ void KMeans::onetimeKMeans(vector<Tuple>& tuples, const vector<int> &indexToSele
 
     cout<<"The result is:\n";
     print(clusters);
+    return clusters;
 }
 
 //计算两个元组间的欧几里距离
